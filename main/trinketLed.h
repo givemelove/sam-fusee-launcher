@@ -1,30 +1,43 @@
 #include <Arduino.h>
-#include <Adafruit_DotStar.h>
-Adafruit_DotStar strip = Adafruit_DotStar(1, INTERNAL_DS_DATA, INTERNAL_DS_CLK, DOTSTAR_BGR);
-
-void ledInit() {
-  strip.begin();
-  strip.setPixelColor(0, 0, 0, 0);
-  strip.show();
-}
+#include <Adafruit_CircuitPlayground.h>
 
 void setLedColor(const char color[]) {
   if (color == "red") {
-    strip.setPixelColor(0, 64, 0, 0);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 64, 0, 0);
+    }
   } else if (color == "green") {
-    strip.setPixelColor(0, 0, 64, 0);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 0, 64, 0);
+    }
   } else if (color == "orange") {
-    strip.setPixelColor(0, 64, 32, 0);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 64, 32, 0);
+    }
   } else if (color == "black") {
-    strip.setPixelColor(0, 0, 0, 0);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 0, 0, 0);
+    }
   } else if (color == "blue") {
-    strip.setPixelColor(0, 5, 20, 64);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 5, 20, 64);
+    }
   } else if (color == "red2") {
-    strip.setPixelColor(0, 64, 10, 10);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 64, 10, 10);
+    }
   } else {
-    strip.setPixelColor(0, 255, 255, 255);
+    for (int i = 0; i < 10; i++)
+    {
+      CircuitPlayground.setPixelColor(i, 255, 255, 255);
+    }
   }
-  strip.show();
 }
 
 void ledBlink(const char color[], int count, int duration) {
@@ -43,8 +56,8 @@ void ledBlink(const char color[], int count, int duration) {
 void sleepDeep(int errorCode) {
   // Turn off all LEDs and go to sleep. To launch another payload, press the reset button on the device.
   //delay(100);
-  digitalWrite(PIN_LED_RXL, HIGH);
-  digitalWrite(PIN_LED_TXL, HIGH);
+  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(LED_BUILTIN, HIGH);
   digitalWrite(13, LOW);
   if (errorCode == 1) {
     setLedColor("black");; //led to off

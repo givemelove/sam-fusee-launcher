@@ -2,6 +2,7 @@
 
 #include "fuseegelee.h"
 #include "trinketLed.h"
+#include <Adafruit_CircuitPlayground.h>
 
 // Contains fuseeBin and FUSEE_BIN_SIZE
 #include "hekate_ctcaer_4.2.h"
@@ -9,7 +10,8 @@
 
 void setup()
 {
-  ledInit();
+  pinMode(LED_BUILTIN, OUTPUT);
+  CircuitPlayground.begin();
   if (usbInit() == -1) sleepDeep(-1);
 
   while (!searchTegraDevice())
