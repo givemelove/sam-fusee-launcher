@@ -55,12 +55,6 @@ Then just compile and upload.
 # Hardware
 [Circuit Playground Express](https://www.adafruit.com/product/3333) + [liPoly charger](https://www.adafruit.com/product/2124) + Button + 150mAh LiPoly Battery
 
-![Layout](./images/layout.png)
-
-![front](./images/front.jpg)
-
-![back](./images/back.jpg)
-
 Power consumption:
 Not Tested
 
